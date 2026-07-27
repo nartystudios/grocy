@@ -175,7 +175,7 @@ public class LoginRequestViewModel extends BaseViewModel {
           }
 
           // Insert or update server instance in database
-          xyz.zedler.patrick.grocy.model.Server server = new xyz.zedler.patrick.grocy.model.Server();
+          Server server = new Server();
           String serverId = "server_" + serverUrl.hashCode() + "_" + System.currentTimeMillis();
           server.setId(serverId);
           server.setDisplayName(useHassLoginFlow ? "Home Assistant Grocy" : "Grocy Server");

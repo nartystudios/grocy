@@ -93,7 +93,7 @@ public class VersionUtil {
   }
 
   public static void showChangelogBottomSheet(MainActivity mainActivity) {
-    xyz.zedler.patrick.grocy.NavigationMainDirections.ActionGlobalTextDialog action
+    NavigationMainDirections.ActionGlobalTextDialog action
         = NavigationMainDirections.actionGlobalTextDialog();
     action.setTitle(R.string.info_changelog);
     action.setFile(R.raw.changelog);

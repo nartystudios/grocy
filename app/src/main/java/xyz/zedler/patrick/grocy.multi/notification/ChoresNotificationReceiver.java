@@ -94,7 +94,7 @@ public class ChoresNotificationReceiver extends BroadcastReceiver {
 
       Uri uri = NavUtil.getUriWithArgs(
           context.getString(R.string.deep_link_choresFragment),
-          new xyz.zedler.patrick.grocy.fragment.ChoresFragmentArgs.Builder()
+          new xyz.zedler.patrick.grocy.multi.fragment.ChoresFragmentArgs.Builder()
               .setStatusFilterId(String.valueOf(FilterChipLiveDataStatusChores.STATUS_DUE))
               .build().toBundle()
       );
