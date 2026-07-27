@@ -63,12 +63,12 @@
       android:layout_marginTop="8dp"
       android:paddingBottom="8dp">
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-      <xyz.zedler.patrick.grocy.view.ExpandableCard
+      <xyz.zedler.patrick.grocy.multi.view.ExpandableCard
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,32 +76,32 @@
         android:layout_marginEnd="16dp"
         android:layout_marginVertical="8dp" />
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/due_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/purchased_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

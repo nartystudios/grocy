@@ -25,16 +25,16 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.MealPlanViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.MealPlanViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.MealPlanFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.MealPlanFragment" />
   </data>
 
   <RelativeLayout
@@ -141,7 +141,7 @@
         style="@style/Widget.Grocy.Divider.Margin"
         android:layout_marginBottom="0dp" />
 
-      <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+      <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
         android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent" />
 
-      </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+      </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
     </LinearLayout>
 

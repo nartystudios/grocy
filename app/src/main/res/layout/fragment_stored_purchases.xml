@@ -25,19 +25,19 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.StoredPurchasesViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.StoredPurchasesViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.StoredPurchasesFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.StoredPurchasesFragment" />
     <variable
       name="clickUtil"
-      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+      type="xyz.zedler.patrick.grocy.multi.util.ClickUtil" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -123,7 +123,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -189,7 +189,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

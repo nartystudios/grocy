@@ -18,7 +18,7 @@
   ~ Copyright (c) 2024-2026 by Patrick Zedler
   -->
 
-<xyz.zedler.patrick.grocy.view.MaterialTimelineView
+<xyz.zedler.patrick.grocy.multi.view.MaterialTimelineView
   android:id="@+id/timeline_view"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
@@ -51,4 +51,4 @@
 
   </LinearLayout>
 
-</xyz.zedler.patrick.grocy.view.MaterialTimelineView>
+</xyz.zedler.patrick.grocy.multi.view.MaterialTimelineView>

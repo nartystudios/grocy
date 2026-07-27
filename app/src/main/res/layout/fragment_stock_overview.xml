@@ -22,16 +22,16 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.StockOverviewViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.StockOverviewViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.StockOverviewFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.StockOverviewFragment" />
   </data>
 
   <RelativeLayout
@@ -187,17 +187,17 @@
           android:paddingStart="12dp"
           android:paddingEnd="12dp">
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataStatus}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataProductGroup}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="@{viewModel.isFeatureEnabled(Constants.PREF.FEATURE_STOCK_LOCATION_TRACKING) ? View.VISIBLE : View.GONE}"
@@ -211,17 +211,17 @@
             android:layout_gravity="center_vertical"
             android:background="?attr/colorOutlineVariant"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataSort}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataGrouping}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataFields}"/>
@@ -250,7 +250,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -276,7 +276,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </RelativeLayout>
 

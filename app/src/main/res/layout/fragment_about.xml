@@ -24,10 +24,10 @@
     <import type="android.view.View" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.AboutFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.AboutFragment" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

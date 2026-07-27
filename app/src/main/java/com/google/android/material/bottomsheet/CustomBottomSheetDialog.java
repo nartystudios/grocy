@@ -55,7 +55,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.motion.MaterialBackOrchestrator;
 import com.google.android.material.shape.MaterialShapeDrawable;
-import xyz.zedler.patrick.grocy.util.UiUtil;
+import xyz.zedler.patrick.grocy.multi.util.UiUtil;
 
 /**
  * Base class for {@link android.app.Dialog}s styled as a bottom sheet.
@@ -256,7 +256,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     if (container == null) {
       container = (FrameLayout) View.inflate(
           getContext(),
-          xyz.zedler.patrick.grocy.R.layout.dialog_bottom_sheet_custom, null
+          xyz.zedler.patrick.grocy.multi.R.layout.dialog_bottom_sheet_custom, null
       );
 
       coordinator = container.findViewById(R.id.coordinator);

@@ -24,7 +24,7 @@
     <import type="android.view.View" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
   </data>
 
   <FrameLayout
@@ -34,7 +34,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface">
 
-    <xyz.zedler.patrick.grocy.view.photoview.PhotoView
+    <xyz.zedler.patrick.grocy.multi.view.photoview.PhotoView
       android:id="@+id/photo_view"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

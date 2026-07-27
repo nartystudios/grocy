@@ -25,19 +25,19 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
     <variable
       name="formData"
-      type="xyz.zedler.patrick.grocy.form.FormDataMasterProductCatAmount" />
+      type="xyz.zedler.patrick.grocy.multi.form.FormDataMasterProductCatAmount" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.MasterProductCatAmountViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.MasterProductCatAmountViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.MasterProductCatAmountFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatAmountFragment" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

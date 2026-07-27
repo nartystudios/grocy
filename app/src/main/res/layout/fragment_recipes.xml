@@ -24,13 +24,13 @@
     <import type="android.view.View" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.RecipesViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.RecipesViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.RecipesFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.RecipesFragment" />
   </data>
 
   <RelativeLayout
@@ -146,7 +146,7 @@
           android:paddingStart="12dp"
           android:paddingEnd="12dp">
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               app:data="@{viewModel.filterChipLiveDataStatus}"/>
@@ -159,12 +159,12 @@
             android:layout_gravity="center_vertical"
             android:background="?attr/colorOutlineVariant"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataSort}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataFields}"/>
@@ -193,7 +193,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -220,7 +220,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </RelativeLayout>
 

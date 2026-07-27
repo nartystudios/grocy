@@ -25,20 +25,20 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
     <variable
       name="formData"
-      type="xyz.zedler.patrick.grocy.form.FormDataMasterProductCatBarcodesEdit" />
+      type="xyz.zedler.patrick.grocy.multi.form.FormDataMasterProductCatBarcodesEdit" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.MasterProductCatBarcodesEditViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.MasterProductCatBarcodesEditViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.MasterProductCatBarcodesEditFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatBarcodesEditFragment" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -58,7 +58,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -321,7 +321,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

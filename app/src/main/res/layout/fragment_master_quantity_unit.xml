@@ -38,7 +38,7 @@
 
   </com.google.android.material.appbar.AppBarLayout>
 
-  <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+  <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
     android:id="@+id/swipe_master_quantity_unit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -202,6 +202,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-  </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+  </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

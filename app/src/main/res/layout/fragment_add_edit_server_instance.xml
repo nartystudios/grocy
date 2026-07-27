@@ -27,13 +27,13 @@
     <import type="android.view.View" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.AddEditServerInstanceFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.AddEditServerInstanceFragment" />
     <variable
       name="clickUtil"
-      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+      type="xyz.zedler.patrick.grocy.multi.util.ClickUtil" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

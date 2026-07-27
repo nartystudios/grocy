@@ -63,12 +63,12 @@
       android:layout_marginTop="8dp"
       android:paddingBottom="8dp">
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-      <xyz.zedler.patrick.grocy.view.ExpandableCard
+      <xyz.zedler.patrick.grocy.multi.view.ExpandableCard
         android:id="@+id/card_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,25 +76,25 @@
         android:layout_marginEnd="16dp"
         android:layout_marginVertical="8dp" />
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/tracked_count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/average_execution_frequency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/last_tracked"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-      <xyz.zedler.patrick.grocy.view.ListItem
+      <xyz.zedler.patrick.grocy.multi.view.ListItem
         android:id="@+id/last_done_by"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

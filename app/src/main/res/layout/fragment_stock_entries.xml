@@ -22,16 +22,16 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.StockEntriesViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.StockEntriesViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.StockEntriesFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.StockEntriesFragment" />
   </data>
 
   <RelativeLayout
@@ -188,7 +188,7 @@
           android:paddingStart="12dp"
           android:paddingEnd="12dp">
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="@{viewModel.isFeatureEnabled(Constants.PREF.FEATURE_STOCK_LOCATION_TRACKING) ? View.VISIBLE : View.GONE}"
@@ -203,12 +203,12 @@
             android:visibility="@{viewModel.isFeatureEnabled(Constants.PREF.FEATURE_STOCK_LOCATION_TRACKING) ? View.VISIBLE : View.GONE}"
             android:background="?attr/colorOutline"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataSort}"/>
 
-          <xyz.zedler.patrick.grocy.view.FilterChip
+          <xyz.zedler.patrick.grocy.multi.view.FilterChip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:data="@{viewModel.filterChipLiveDataGrouping}"/>
@@ -237,7 +237,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -263,7 +263,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </RelativeLayout>
 

@@ -27,16 +27,16 @@
     <import type="android.view.View" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.LoginRequestFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.LoginRequestFragment" />
     <variable
       name="clickUtil"
-      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+      type="xyz.zedler.patrick.grocy.multi.util.ClickUtil" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.LoginRequestViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.LoginRequestViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -25,20 +25,20 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
     <variable
       name="formData"
-      type="xyz.zedler.patrick.grocy.form.FormDataMasterProductCatDueDate" />
+      type="xyz.zedler.patrick.grocy.multi.form.FormDataMasterProductCatDueDate" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.MasterProductCatDueDateViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.MasterProductCatDueDateViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.MasterProductCatDueDateFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatDueDateFragment" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

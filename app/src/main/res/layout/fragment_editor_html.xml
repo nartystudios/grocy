@@ -24,7 +24,7 @@
     <import type="android.view.View" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
   </data>
 
   <RelativeLayout
@@ -48,7 +48,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.Summernote
+    <xyz.zedler.patrick.grocy.multi.view.Summernote
       android:id="@+id/summernote"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

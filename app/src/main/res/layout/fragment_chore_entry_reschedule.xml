@@ -25,13 +25,13 @@
     <import type="android.view.View" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.ChoreEntryRescheduleFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.ChoreEntryRescheduleFragment" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.ChoreEntryRescheduleViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.ChoreEntryRescheduleViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -53,7 +53,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -209,7 +209,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -26,7 +26,7 @@
   <data>
     <variable
       name="bottomsheet"
-      type="xyz.zedler.patrick.grocy.fragment.bottomSheetDialog.InputProductBottomSheet" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.bottomSheetDialog.InputProductBottomSheet" />
   </data>
 
   <LinearLayout

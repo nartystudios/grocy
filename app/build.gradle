@@ -24,11 +24,11 @@ plugins {
 }
 
 android {
-    namespace = 'xyz.zedler.patrick.grocy'
+    namespace = 'xyz.zedler.patrick.grocy.multi'
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "xyz.zedler.patrick.grocy"
+        applicationId = "xyz.zedler.patrick.grocy.multi"
         minSdk = 23
         targetSdk = 37
         versionCode = 65

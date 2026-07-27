@@ -24,10 +24,10 @@
     <import type="android.view.View" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="sheet"
-      type="xyz.zedler.patrick.grocy.fragment.bottomSheetDialog.ShortcutsBottomSheet" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.bottomSheetDialog.ShortcutsBottomSheet" />
   </data>
 
   <LinearLayout

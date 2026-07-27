@@ -25,19 +25,19 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
     <variable
       name="formData"
-      type="xyz.zedler.patrick.grocy.form.FormDataMasterProductCatOptional" />
+      type="xyz.zedler.patrick.grocy.multi.form.FormDataMasterProductCatOptional" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.MasterProductCatOptionalViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.MasterProductCatOptionalViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.MasterProductCatOptionalFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatOptionalFragment" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -86,7 +86,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout
+    <xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout
       android:id="@+id/swipe_master_product_simple"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -571,7 +571,7 @@
 
               </com.google.android.material.card.MaterialCardView>
 
-              <xyz.zedler.patrick.grocy.view.RoundedCornerImageView
+              <xyz.zedler.patrick.grocy.multi.view.RoundedCornerImageView
                 android:id="@+id/picture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -629,7 +629,7 @@
 
       </FrameLayout>
 
-    </xyz.zedler.patrick.grocy.view.swiperefreshlayout.CustomSwipeRefreshLayout>
+    </xyz.zedler.patrick.grocy.multi.view.swiperefreshlayout.CustomSwipeRefreshLayout>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -26,24 +26,24 @@
 
   <data>
     <import type="android.view.View" />
-    <import type="xyz.zedler.patrick.grocy.R" />
-    <import type="xyz.zedler.patrick.grocy.Constants" />
-    <import type="xyz.zedler.patrick.grocy.fragment.SettingsCatDebuggingFragmentDirections" />
+    <import type="xyz.zedler.patrick.grocy.multi.R" />
+    <import type="xyz.zedler.patrick.grocy.multi.Constants" />
+    <import type="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatDebuggingFragmentDirections" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.SettingsViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.SettingsViewModel" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.SettingsCatDebuggingFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatDebuggingFragment" />
     <variable
       name="sharedPrefs"
       type="android.content.SharedPreferences" />
     <variable
       name="clickUtil"
-      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+      type="xyz.zedler.patrick.grocy.multi.util.ClickUtil" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

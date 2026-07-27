@@ -26,19 +26,19 @@
     <import type="android.view.View" />
     <variable
       name="fragment"
-      type="xyz.zedler.patrick.grocy.fragment.LoginApiFormFragment" />
+      type="xyz.zedler.patrick.grocy.multi.fragment.LoginApiFormFragment" />
     <variable
       name="clickUtil"
-      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+      type="xyz.zedler.patrick.grocy.multi.util.ClickUtil" />
     <variable
       name="activity"
-      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+      type="xyz.zedler.patrick.grocy.multi.activity.MainActivity" />
     <variable
       name="viewModel"
-      type="xyz.zedler.patrick.grocy.viewmodel.LoginApiFormViewModel" />
+      type="xyz.zedler.patrick.grocy.multi.viewmodel.LoginApiFormViewModel" />
     <variable
       name="formData"
-      type="xyz.zedler.patrick.grocy.form.FormDataLoginApiForm" />
+      type="xyz.zedler.patrick.grocy.multi.form.FormDataLoginApiForm" />
   </data>
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout

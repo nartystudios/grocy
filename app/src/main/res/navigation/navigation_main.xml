@@ -27,7 +27,7 @@
 
   <fragment
     android:id="@+id/purchaseFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.PurchaseFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.PurchaseFragment"
     android:label="PurchaseFragment"
     tools:layout="@layout/fragment_purchase">
     <argument
@@ -74,7 +74,7 @@
   </fragment>
   <fragment
     android:id="@+id/consumeFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.ConsumeFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.ConsumeFragment"
     android:label="ConsumeFragmentNew"
     tools:layout="@layout/fragment_consume">
     <argument
@@ -108,7 +108,7 @@
   </fragment>
   <fragment
     android:id="@+id/transferFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.TransferFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.TransferFragment"
     android:label="TransferFragment"
     tools:layout="@layout/fragment_transfer">
     <argument
@@ -138,7 +138,7 @@
   </fragment>
   <fragment
     android:id="@+id/inventoryFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.InventoryFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.InventoryFragment"
     android:label="InventoryFragment"
     tools:layout="@layout/fragment_inventory">
     <argument
@@ -168,7 +168,7 @@
   </fragment>
   <fragment
     android:id="@+id/tasksFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.TasksFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.TasksFragment"
     android:label="TasksFragment"
     tools:layout="@layout/fragment_tasks">
     <deepLink
@@ -180,28 +180,28 @@
   </fragment>
   <dialog
     android:id="@+id/productOverviewBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.bottomSheetDialog.ProductOverviewBottomSheet"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.bottomSheetDialog.ProductOverviewBottomSheet"
     android:label="ProductOverviewBottomSheetDialogFragment"
     tools:layout="@layout/fragment_bottomsheet_product_overview">
     <argument
       android:name="productDetails"
       android:defaultValue="@null"
-      app:argType="xyz.zedler.patrick.grocy.model.ProductDetails"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.ProductDetails"
       app:nullable="true" />
     <argument
       android:name="stockItem"
       android:defaultValue="@null"
-      app:argType="xyz.zedler.patrick.grocy.model.StockItem"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.StockItem"
       app:nullable="true" />
     <argument
       android:name="quantityUnitStock"
       android:defaultValue="@null"
-      app:argType="xyz.zedler.patrick.grocy.model.QuantityUnit"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnit"
       app:nullable="true" />
     <argument
       android:name="location"
       android:defaultValue="@null"
-      app:argType="xyz.zedler.patrick.grocy.model.Location"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.Location"
       app:nullable="true" />
     <argument
       android:name="showActions"
@@ -221,28 +221,28 @@
       app:destination="@id/inventoryFragment" />
     <argument
       android:name="quantityUnitPurchase"
-      app:argType="xyz.zedler.patrick.grocy.model.QuantityUnit"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnit"
       app:nullable="true"
       android:defaultValue="@null" />
     <argument
       android:name="quantityUnitConsume"
-      app:argType="xyz.zedler.patrick.grocy.model.QuantityUnit"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnit"
       app:nullable="true"
       android:defaultValue="@null" />
     <argument
       android:name="quantityUnitPrice"
-      app:argType="xyz.zedler.patrick.grocy.model.QuantityUnit"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnit"
       app:nullable="true"
       android:defaultValue="@null" />
     <argument
       android:name="product"
-      app:argType="xyz.zedler.patrick.grocy.model.Product"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
       app:nullable="true"
       android:defaultValue="@null" />
   </dialog>
   <dialog
     android:id="@+id/drawerBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.bottomSheetDialog.DrawerBottomSheet"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.bottomSheetDialog.DrawerBottomSheet"
     android:label="DrawerBottomSheetDialogFragment"
     tools:layout="@layout/fragment_bottomsheet_drawer">
     <action
@@ -287,7 +287,7 @@
     app:destination="@id/drawerBottomSheetDialogFragment" />
   <fragment
     android:id="@+id/onboardingFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.OnboardingFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.OnboardingFragment"
     android:label="OnboardingFragment"
     tools:layout="@layout/fragment_onboarding">
     <argument
@@ -306,7 +306,7 @@
     app:destination="@id/onboardingFragment" />
   <fragment
     android:id="@+id/serverSelectionFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.ServerSelectionFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.ServerSelectionFragment"
     android:label="ServerSelectionFragment"
     tools:layout="@layout/fragment_server_selection">
     <action
@@ -315,7 +315,7 @@
   </fragment>
   <dialog
     android:id="@+id/addEditServerInstanceFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.AddEditServerInstanceFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.AddEditServerInstanceFragment"
     android:label="AddEditServerInstanceFragment"
     tools:layout="@layout/fragment_add_edit_server_instance">
     <argument
@@ -326,7 +326,7 @@
   </dialog>
   <fragment
     android:id="@+id/overviewStartFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.OverviewStartFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.OverviewStartFragment"
     android:label="OverviewStartFragment"
     tools:layout="@layout/fragment_overview_start" />
   <navigation
@@ -334,7 +334,7 @@
     app:startDestination="@id/loginIntroFragment">
     <fragment
       android:id="@+id/loginIntroFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.LoginIntroFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.LoginIntroFragment"
       android:label="LoginIntroFragment"
       tools:layout="@layout/fragment_login_intro">
       <action
@@ -349,7 +349,7 @@
     </fragment>
     <fragment
       android:id="@+id/loginRequestFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.LoginRequestFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.LoginRequestFragment"
       android:label="LoginRequestFragment"
       tools:layout="@layout/fragment_login_request">
       <argument
@@ -371,7 +371,7 @@
     </fragment>
     <fragment
       android:id="@+id/loginApiQrCodeFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.LoginApiQrCodeFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.LoginApiQrCodeFragment"
       android:label="LoginApiQrCodeFragment"
       tools:layout="@layout/fragment_login_api_qr_code">
       <action
@@ -401,7 +401,7 @@
     </fragment>
     <fragment
       android:id="@+id/loginApiFormFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.LoginApiFormFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.LoginApiFormFragment"
       android:label="LoginApiFormFragment"
       tools:layout="@layout/fragment_login_api_form">
       <action
@@ -434,7 +434,7 @@
     app:startDestination="@id/shoppingListFragment">
     <fragment
       android:id="@+id/shoppingListFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.ShoppingListFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.ShoppingListFragment"
       android:label="ShoppingListFragment"
       tools:layout="@layout/fragment_shopping_list">
       <action
@@ -456,7 +456,7 @@
     </fragment>
     <fragment
       android:id="@+id/shoppingListItemEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.ShoppingListItemEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.ShoppingListItemEditFragment"
       android:label="ShoppingListItemEditFragment"
       tools:layout="@layout/fragment_shopping_list_item_edit">
       <argument
@@ -474,7 +474,7 @@
       <argument
         android:name="shoppingListItem"
         android:defaultValue="@null"
-        app:argType="xyz.zedler.patrick.grocy.model.ShoppingListItem"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.ShoppingListItem"
         app:nullable="true" />
       <deepLink
         android:id="@+id/deepLink7"
@@ -486,13 +486,13 @@
     </fragment>
     <fragment
       android:id="@+id/shoppingListEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.ShoppingListEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.ShoppingListEditFragment"
       android:label="ShoppingListEditFragment"
       tools:layout="@layout/fragment_shopping_list_edit">
       <argument
         android:name="shoppingList"
         android:defaultValue="@null"
-        app:argType="xyz.zedler.patrick.grocy.model.ShoppingList"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.ShoppingList"
         app:nullable="true" />
       <argument
         android:name="animateStart"
@@ -501,7 +501,7 @@
     </fragment>
     <fragment
       android:id="@+id/shoppingModeFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.ShoppingModeFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.ShoppingModeFragment"
       android:label="ShoppingModeFragment"
       tools:layout="@layout/fragment_shopping_mode">
       <argument
@@ -517,7 +517,7 @@
     </fragment>
     <fragment
       android:id="@+id/shoppingModeOptionsFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.ShoppingModeOptionsFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.ShoppingModeOptionsFragment"
       android:label="ShoppingModeOptionsFragment"
       tools:layout="@layout/fragment_shopping_mode_options"/>
   </navigation>
@@ -526,7 +526,7 @@
     app:startDestination="@id/settingsFragment">
     <fragment
       android:id="@+id/settingsFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsFragment"
       android:label="SettingsFragment"
       tools:layout="@layout/fragment_settings">
       <argument
@@ -567,12 +567,12 @@
     </fragment>
     <fragment
       android:id="@+id/logFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.LogFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.LogFragment"
       android:label="LogFragment"
       tools:layout="@layout/fragment_log" />
     <fragment
       android:id="@+id/aboutFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.AboutFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.AboutFragment"
       android:label="AboutFragment"
       tools:layout="@layout/fragment_about">
       <deepLink
@@ -581,7 +581,7 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatServerFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatServerFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatServerFragment"
       android:label="SettingsCatServerFragment"
       tools:layout="@layout/fragment_settings_cat_server">
       <deepLink
@@ -590,12 +590,12 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatAppearanceFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatAppearanceFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatAppearanceFragment"
       android:label="SettingsCatAppearanceFragment"
       tools:layout="@layout/fragment_settings_cat_appearance" />
     <fragment
       android:id="@+id/settingsCatBehaviorFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatBehaviorFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatBehaviorFragment"
       android:label="SettingsCatBehaviorFragment"
       tools:layout="@layout/fragment_settings_cat_behavior">
       <deepLink
@@ -604,7 +604,7 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatScannerFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatScannerFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatScannerFragment"
       android:label="SettingsCatScannerFragment"
       tools:layout="@layout/fragment_settings_cat_scanner">
       <deepLink
@@ -613,17 +613,17 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatStockFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatStockFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatStockFragment"
       android:label="SettingsCatStockFragment"
       tools:layout="@layout/fragment_settings_cat_stock"/>
     <fragment
       android:id="@+id/settingsCatNetworkFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatNetworkFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatNetworkFragment"
       android:label="SettingsCatNetworkFragment"
       tools:layout="@layout/fragment_settings_cat_network" />
     <fragment
       android:id="@+id/settingsCatDebuggingFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatDebuggingFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatDebuggingFragment"
       android:label="SettingsCatDebuggingFragment"
       tools:layout="@layout/fragment_settings_cat_debugging">
       <action
@@ -632,7 +632,7 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatUserSettingsFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatUserSettingsFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatUserSettingsFragment"
       android:label="SettingsCatUserSettingsFragment"
       tools:layout="@layout/fragment_settings_cat_user_settings">
       <action
@@ -644,12 +644,12 @@
     </fragment>
     <fragment
       android:id="@+id/settingsCatShoppingListFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatShoppingListFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatShoppingListFragment"
       android:label="SettingsCatShoppingListFragment"
       tools:layout="@layout/fragment_settings_cat_shopping_list"/>
     <fragment
         android:id="@+id/settingsCatNotificationsFragment"
-        android:name="xyz.zedler.patrick.grocy.fragment.SettingsCatNotificationsFragment"
+        android:name="xyz.zedler.patrick.grocy.multi.fragment.SettingsCatNotificationsFragment"
         android:label="SettingsCatNotificationsFragment"
         tools:layout="@layout/fragment_settings_cat_notifications">
     </fragment>
@@ -660,7 +660,7 @@
 
     <fragment
       android:id="@+id/masterDataOverviewFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterDataOverviewFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterDataOverviewFragment"
       android:label="MasterDataOverviewFragment"
       tools:layout="@layout/fragment_master_data_overview">
       <action
@@ -672,7 +672,7 @@
     </fragment>
     <fragment
       android:id="@+id/masterObjectListFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterObjectListFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterObjectListFragment"
       android:label="MasterObjectListFragment"
       tools:layout="@layout/fragment_master_object_list">
       <action
@@ -704,12 +704,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterLocationFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterLocationFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterLocationFragment"
       android:label="MasterLocationFragment"
       tools:layout="@layout/fragment_master_location">
       <argument
         android:name="location"
-        app:argType="xyz.zedler.patrick.grocy.model.Location"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Location"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -720,23 +720,23 @@
     </fragment>
     <fragment
       android:id="@+id/masterStoreFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterStoreFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterStoreFragment"
       android:label="MasterStoreFragment"
       tools:layout="@layout/fragment_master_store">
       <argument
         android:name="store"
-        app:argType="xyz.zedler.patrick.grocy.model.Store"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Store"
         app:nullable="true"
         android:defaultValue="@null" />
     </fragment>
     <fragment
       android:id="@+id/masterQuantityUnitFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterQuantityUnitFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterQuantityUnitFragment"
       android:label="MasterQuantityUnitFragment"
       tools:layout="@layout/fragment_master_quantity_unit">
       <argument
         android:name="quantityUnit"
-        app:argType="xyz.zedler.patrick.grocy.model.QuantityUnit"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnit"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -747,18 +747,18 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductGroupFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductGroupFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductGroupFragment"
       android:label="MasterProductGroupFragment"
       tools:layout="@layout/fragment_master_product_group">
       <argument
         android:name="productGroup"
-        app:argType="xyz.zedler.patrick.grocy.model.ProductGroup"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.ProductGroup"
         app:nullable="true"
         android:defaultValue="@null" />
     </fragment>
     <fragment
       android:id="@+id/masterProductFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductFragment"
       android:label="MasterProductFragment"
       tools:layout="@layout/fragment_master_product">
       <deepLink
@@ -766,7 +766,7 @@
         app:uri="@string/deep_link_masterProductFragment" />
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -816,12 +816,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatOptionalFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatOptionalFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatOptionalFragment"
       android:label="MasterProductCatOptionalFragment"
       tools:layout="@layout/fragment_master_product_cat_optional">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -840,12 +840,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatLocationFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatLocationFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatLocationFragment"
       android:label="MasterProductCatLocationFragment"
       tools:layout="@layout/fragment_master_product_cat_location">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -861,12 +861,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatDueDateFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatDueDateFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatDueDateFragment"
       android:label="MasterProductCatDueDateFragment"
       tools:layout="@layout/fragment_master_product_cat_due_date">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -879,12 +879,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatAmountFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatAmountFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatAmountFragment"
       android:label="MasterProductCatAmountFragment"
       tools:layout="@layout/fragment_master_product_cat_amount">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -897,12 +897,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatQuantityUnitFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatQuantityUnitFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatQuantityUnitFragment"
       android:label="MasterProductCatQuantityUnitFragment"
       tools:layout="@layout/fragment_master_product_cat_quantity_unit">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -918,12 +918,12 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatBarcodesFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatBarcodesFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatBarcodesFragment"
       android:label="MasterProductCatBarcodesFragment"
       tools:layout="@layout/fragment_master_product_cat_barcodes">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -935,26 +935,26 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatBarcodesEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatBarcodesEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatBarcodesEditFragment"
       android:label="MasterProductCatBarcodesEditFragment"
       tools:layout="@layout/fragment_master_product_cat_barcodes_edit">
       <argument
         android:name="productBarcode"
-        app:argType="xyz.zedler.patrick.grocy.model.ProductBarcode"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.ProductBarcode"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product" />
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product" />
     </fragment>
     <fragment
       android:id="@+id/masterProductCatConversionsFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatConversionsFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatConversionsFragment"
       android:label="MasterProductCatConversionsFragment"
       tools:layout="@layout/fragment_master_product_cat_conversions">
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
@@ -966,35 +966,35 @@
     </fragment>
     <fragment
       android:id="@+id/masterProductCatConversionsEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterProductCatConversionsEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterProductCatConversionsEditFragment"
       android:label="MasterProductCatConversionsEditFragment"
       tools:layout="@layout/fragment_master_product_cat_conversions_edit">
       <argument
         android:name="conversion"
-        app:argType="xyz.zedler.patrick.grocy.model.QuantityUnitConversion"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.QuantityUnitConversion"
         app:nullable="true"
         android:defaultValue="@null" />
       <argument
         android:name="product"
-        app:argType="xyz.zedler.patrick.grocy.model.Product" />
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Product" />
       <action
         android:id="@+id/action_masterProductCatConversionsEditFragment_to_masterQuantityUnitFragment"
         app:destination="@id/masterQuantityUnitFragment" />
     </fragment>
     <fragment
       android:id="@+id/masterTaskCategoryFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.MasterTaskCategoryFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.MasterTaskCategoryFragment"
       android:label="MasterTaskCategoryFragment"
       tools:layout="@layout/fragment_master_task_category">
       <argument
         android:name="taskCategory"
-        app:argType="xyz.zedler.patrick.grocy.model.TaskCategory"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.TaskCategory"
         app:nullable="true"
         android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/editorHtmlFragment"
-        android:name="xyz.zedler.patrick.grocy.fragment.EditorHtmlFragment"
+        android:name="xyz.zedler.patrick.grocy.multi.fragment.EditorHtmlFragment"
         android:label="EditorHtmlFragment"
         tools:layout="@layout/fragment_editor_html">
       <argument
@@ -1006,7 +1006,7 @@
   </navigation>
   <fragment
     android:id="@+id/stockOverviewFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.StockOverviewFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.StockOverviewFragment"
     android:label="StockOverviewFragment"
     tools:layout="@layout/fragment_stock_overview">
     <argument
@@ -1034,7 +1034,7 @@
   <fragment
     android:id="@+id/chooseProductFragment"
     android:label="ChooseProductFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.ChooseProductFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.ChooseProductFragment"
     tools:layout="@layout/fragment_choose_product">
     <argument
       android:name="barcode"
@@ -1054,7 +1054,7 @@
   <fragment
     android:id="@+id/storedPurchasesFragment"
     android:label="StoredProductsFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.StoredPurchasesFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.StoredPurchasesFragment"
     tools:layout="@layout/fragment_stored_purchases">
     <deepLink
       android:id="@+id/deepLink14"
@@ -1066,7 +1066,7 @@
   <fragment
     android:id="@+id/taskEntryEditFragment"
     android:label="TaskEntryEditFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.TaskEntryEditFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.TaskEntryEditFragment"
     tools:layout="@layout/fragment_task_entry_edit">
     <argument
       android:name="action"
@@ -1074,7 +1074,7 @@
     <argument
       android:defaultValue="@null"
       android:name="taskEntry"
-      app:argType="xyz.zedler.patrick.grocy.model.Task"
+      app:argType="xyz.zedler.patrick.grocy.multi.model.Task"
       app:nullable="true" />
     <deepLink
       android:id="@+id/deepLink15"
@@ -1083,7 +1083,7 @@
   <fragment
     android:id="@+id/choresFragment"
     android:label="ChoresFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.ChoresFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.ChoresFragment"
     tools:layout="@layout/fragment_chores">
     <deepLink
       android:id="@+id/deepLink16"
@@ -1100,7 +1100,7 @@
   <fragment
     android:id="@+id/stockEntriesFragment"
     android:label="StockEntriesFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.StockEntriesFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.StockEntriesFragment"
     tools:layout="@layout/fragment_stock_entries">
     <argument
       android:defaultValue="@null"
@@ -1113,17 +1113,17 @@
   </fragment>
   <fragment
     android:id="@+id/choreEntryRescheduleFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.ChoreEntryRescheduleFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.ChoreEntryRescheduleFragment"
     android:label="ChoreEntryRescheduleFragment"
     tools:layout="@layout/fragment_chore_entry_reschedule">
     <argument
       android:name="chore"
-      app:argType="xyz.zedler.patrick.grocy.model.Chore" />
+      app:argType="xyz.zedler.patrick.grocy.multi.model.Chore" />
   </fragment>
   <fragment
       android:id="@+id/recipesFragment"
       android:label="RecipesFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.RecipesFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.RecipesFragment"
       tools:layout="@layout/fragment_recipes">
     <deepLink
         android:id="@+id/deepLink16"
@@ -1138,7 +1138,7 @@
   <fragment
       android:id="@+id/recipeEditFragment"
       android:label="RecipeEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.RecipeEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.RecipeEditFragment"
       tools:layout="@layout/fragment_recipe_edit">
     <argument
         android:name="closeWhenFinished"
@@ -1150,7 +1150,7 @@
     <argument
         android:defaultValue="@null"
         android:name="recipe"
-        app:argType="xyz.zedler.patrick.grocy.model.Recipe"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Recipe"
         app:nullable="true" />
     <deepLink
         android:id="@+id/deepLink17"
@@ -1168,7 +1168,7 @@
   </fragment>
   <fragment
       android:id="@+id/recipeEditIngredientListFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.RecipeEditIngredientListFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.RecipeEditIngredientListFragment"
       android:label="RecipeEditIngredientListFragment"
       tools:layout="@layout/fragment_recipe_edit_ingredient_list">
     <deepLink
@@ -1179,7 +1179,7 @@
         app:argType="string" />
     <argument
         android:name="recipe"
-        app:argType="xyz.zedler.patrick.grocy.model.Recipe"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Recipe"
         app:nullable="true"
         android:defaultValue="@null" />
     <action
@@ -1188,7 +1188,7 @@
   </fragment>
   <fragment
       android:id="@+id/recipeEditIngredientEditFragment"
-      android:name="xyz.zedler.patrick.grocy.fragment.RecipeEditIngredientEditFragment"
+      android:name="xyz.zedler.patrick.grocy.multi.fragment.RecipeEditIngredientEditFragment"
       android:label="RecipeEditIngredientEditFragment"
       tools:layout="@layout/fragment_recipe_edit_ingredient_edit">
     <deepLink
@@ -1202,12 +1202,12 @@
         app:argType="string" />
     <argument
         android:name="recipePosition"
-        app:argType="xyz.zedler.patrick.grocy.model.RecipePosition"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.RecipePosition"
         app:nullable="true"
         android:defaultValue="@null" />
     <argument
         android:name="recipe"
-        app:argType="xyz.zedler.patrick.grocy.model.Recipe"
+        app:argType="xyz.zedler.patrick.grocy.multi.model.Recipe"
         app:nullable="true"
         android:defaultValue="@null" />
     <argument
@@ -1221,12 +1221,12 @@
   </fragment>
   <fragment
     android:id="@+id/stockJournalFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.StockJournalFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.StockJournalFragment"
     android:label="StockJournalFragment"
     tools:layout="@layout/fragment_stock_journal"/>
   <fragment
     android:id="@+id/editorHtmlFragment2"
-    android:name="xyz.zedler.patrick.grocy.fragment.EditorHtmlFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.EditorHtmlFragment"
     android:label="EditorHtmlFragment"
     tools:layout="@layout/fragment_editor_html">
     <argument
@@ -1238,7 +1238,7 @@
   <fragment
     android:id="@+id/mealPlanFragment"
     android:label="MealPlanFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.MealPlanFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.MealPlanFragment"
     tools:layout="@layout/fragment_meal_plan">
     <deepLink
       android:id="@+id/deepLink20"
@@ -1249,7 +1249,7 @@
   </fragment>
   <dialog
     android:id="@+id/textBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.bottomSheetDialog.TextBottomSheet"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.bottomSheetDialog.TextBottomSheet"
     android:label="dialog_text">
     <argument
       android:name="file"
@@ -1274,7 +1274,7 @@
     app:destination="@id/textBottomSheetDialogFragment"/>
   <fragment
     android:id="@+id/recipeFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.RecipeFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.RecipeFragment"
     android:label="RecipeFragment"
     tools:layout="@layout/fragment_recipe">
     <argument
@@ -1286,7 +1286,7 @@
   </fragment>
   <fragment
     android:id="@+id/photoViewerFragment"
-    android:name="xyz.zedler.patrick.grocy.fragment.PhotoViewerFragment"
+    android:name="xyz.zedler.patrick.grocy.multi.fragment.PhotoViewerFragment"
     android:label="PhotoViewerFragment"
     tools:layout="@layout/fragment_photo_viewer">
     <argument
