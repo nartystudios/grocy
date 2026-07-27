@@ -23,7 +23,9 @@ package xyz.zedler.patrick.grocy.repository;
 import android.app.Application;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import java.util.List;
 import xyz.zedler.patrick.grocy.database.AppDatabase;
+import xyz.zedler.patrick.grocy.model.Server;
 
 public class MainRepository {
 
@@ -39,6 +41,38 @@ public class MainRepository {
         .doFinally(appDatabase::clearAllTables)
         .subscribeOn(Schedulers.io())
         .subscribe();
+  }
+
+  public Single<List<Server>> getServers() {
+    return appDatabase.serverDao().getServers();
+  }
+
+  public Single<Server> getServerById(String id) {
+    return appDatabase.serverDao().getServerById(id);
+  }
+
+  public Single<Long> insertServer(Server server) {
+    return appDatabase.serverDao().insertServer(server);
+  }
+
+  public Single<Integer> updateServer(Server server) {
+    return appDatabase.serverDao().updateServer(server);
+  }
+
+  public Single<Integer> deleteServerById(String id) {
+    return appDatabase.serverDao().deleteServerById(id);
+  }
+
+  public Single<Integer> clearDefaults() {
+    return appDatabase.serverDao().clearDefaults();
+  }
+
+  public Single<Integer> setDefaultServer(String id) {
+    return appDatabase.serverDao().setDefaultServer(id);
+  }
+
+  public Single<Integer> updateLastUsedTimestamp(String id, long timestamp) {
+    return appDatabase.serverDao().updateLastUsedTimestamp(id, timestamp);
   }
 
   public interface OnVersionListener {

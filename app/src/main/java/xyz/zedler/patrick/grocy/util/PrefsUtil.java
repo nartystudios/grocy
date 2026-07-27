@@ -262,6 +262,21 @@ public class PrefsUtil {
     editPrefs.remove(PREF.SHOPPING_LIST_LAST_ID);
     editPrefs.remove(PREF.GROCY_VERSION);
     editPrefs.remove(PREF.CURRENT_USER_ID);
+    editPrefs.remove(PREF.ACTIVE_SERVER_INSTANCE_ID);
+    editPrefs.apply();
+  }
+
+  public static String getActiveServerInstanceId(SharedPreferences sharedPrefs) {
+    return sharedPrefs.getString(PREF.ACTIVE_SERVER_INSTANCE_ID, null);
+  }
+
+  public static void setActiveServerInstanceId(SharedPreferences sharedPrefs, String instanceId) {
+    SharedPreferences.Editor editPrefs = sharedPrefs.edit();
+    if (instanceId != null && !instanceId.isEmpty()) {
+      editPrefs.putString(PREF.ACTIVE_SERVER_INSTANCE_ID, instanceId);
+    } else {
+      editPrefs.remove(PREF.ACTIVE_SERVER_INSTANCE_ID);
+    }
     editPrefs.apply();
   }
 

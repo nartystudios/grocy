@@ -20,7 +20,7 @@
 
 <resources>
 
-  <string name="app_name" translatable="false">Grocy</string>
+  <string name="app_name" translatable="false">Grocy Multi</string>
   <string name="app_developer" translatable="false">Patrick &amp; Dominic Zedler</string>
 
   <!-- This is an action – in English, it contains a verb.

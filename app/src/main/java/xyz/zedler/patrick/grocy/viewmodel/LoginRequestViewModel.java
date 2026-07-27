@@ -37,6 +37,8 @@ import com.android.volley.NoConnectionError;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import dev.gustavoavila.websocketclient.WebSocketClient;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.net.URI;
 import java.net.URISyntaxException;
 import org.json.JSONException;
@@ -52,6 +54,7 @@ import xyz.zedler.patrick.grocy.helper.DownloadHelper.OnMultiTypeErrorListener;
 import xyz.zedler.patrick.grocy.helper.DownloadHelper.OnStringResponseListener;
 import xyz.zedler.patrick.grocy.model.Event;
 import xyz.zedler.patrick.grocy.model.InfoFullscreen;
+import xyz.zedler.patrick.grocy.repository.MainRepository;
 import xyz.zedler.patrick.grocy.util.ConfigUtil;
 import xyz.zedler.patrick.grocy.util.PrefsUtil;
 import xyz.zedler.patrick.grocy.web.NetworkQueue.QueueItem;
@@ -150,10 +153,6 @@ public class LoginRequestViewModel extends BaseViewModel {
           if (debug) {
             Log.i(TAG, "requestLogin: successfully logged in");
           }
-          sharedPrefs.edit()
-              .putString(Constants.PREF.SERVER_URL, serverUrl)
-              .putString(Constants.PREF.API_KEY, apiKey)
-              .apply();
           if (useHassLoginFlow) {
             sharedPrefs.edit().putString(
                 Constants.PREF.HOME_ASSISTANT_SERVER_URL,
@@ -171,18 +170,31 @@ public class LoginRequestViewModel extends BaseViewModel {
                 ).putString(Constants.PREF.API_KEY, apiKey)
                 .apply();
           }
-          // TODO: Feature needs migrations for database
-          /*Server server = new Server();
+
+          // Insert or update server instance in database
+          xyz.zedler.patrick.grocy.model.Server server = new xyz.zedler.patrick.grocy.model.Server();
+          String serverId = "server_" + serverUrl.hashCode() + "_" + System.currentTimeMillis();
+          server.setId(serverId);
+          server.setDisplayName(useHassLoginFlow ? "Home Assistant Grocy" : "Grocy Server");
           server.setGrocyServerUrl(serverUrl);
           server.setGrocyApiKey(apiKey);
           server.setHomeAssistantServerUrl(homeAssistantServerUrl);
-          server.setHomeAssistantToken(homeAssistantLongLivedToken);
-          appDatabase.serverDao().insertServer(server)
+          server.setHomeAssistantLongLivedToken(homeAssistantLongLivedToken);
+          server.setHomeAssistantIngressSessionKey(null);
+          server.setStatus(1); // CONNECTED
+          server.setLastUsedTimestamp(System.currentTimeMillis());
+          server.setDefault(true);
+
+          // Insert server and set as active instance
+          final MainRepository repository = new MainRepository(getApplication());
+          repository.insertServer(server)
               .subscribeOn(Schedulers.io())
               .observeOn(AndroidSchedulers.mainThread())
+              .doOnSuccess(insertResult -> {
+                PrefsUtil.setActiveServerInstanceId(sharedPrefs, serverId);
+              })
               .doFinally(this::loadInfoAndFinish)
-              .subscribe();*/
-          loadInfoAndFinish();
+              .subscribe();
         },
         error -> {
           Log.e(TAG, "requestLogin: VolleyError: " + error);

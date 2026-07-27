@@ -30,7 +30,9 @@ import xyz.zedler.patrick.grocy.R;
 import xyz.zedler.patrick.grocy.Constants;
 import xyz.zedler.patrick.grocy.Constants.SETTINGS.STOCK;
 import xyz.zedler.patrick.grocy.Constants.SETTINGS_DEFAULT;
+import xyz.zedler.patrick.grocy.model.Server;
 import xyz.zedler.patrick.grocy.util.LocaleUtil;
+import xyz.zedler.patrick.grocy.util.PrefsUtil;
 
 public class GrocyApi {
 
@@ -38,6 +40,10 @@ public class GrocyApi {
 
   private final SharedPreferences sharedPrefs;
   private final String baseUrl;
+  private final String apiKey;
+  private final String homeAssistantServerUrl;
+  private final String homeAssistantLongLivedToken;
+  private final String homeAssistantIngressSessionKey;
 
   public final static class ENTITY {
 
@@ -109,22 +115,71 @@ public class GrocyApi {
 
   public GrocyApi(Application application) {
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(application);
-    String demoDomain = LocaleUtil.getLocalizedGrocyDemoDomain(application);
-    baseUrl = sharedPrefs.getString(
-        Constants.PREF.SERVER_URL,
-        demoDomain != null && !demoDomain.isBlank()
-            ? "https://" + demoDomain
-            : application.getString(R.string.url_grocy_demo_default)
-    );
+    String activeInstanceId = PrefsUtil.getActiveServerInstanceId(sharedPrefs);
+    if (activeInstanceId != null) {
+      // Try to get server from shared prefs as fallback
+      String demoDomain = LocaleUtil.getLocalizedGrocyDemoDomain(application);
+      baseUrl = sharedPrefs.getString(
+          Constants.PREF.SERVER_URL,
+          demoDomain != null && !demoDomain.isBlank()
+              ? "https://" + demoDomain
+              : application.getString(R.string.url_grocy_demo_default)
+      );
+      apiKey = sharedPrefs.getString(Constants.PREF.API_KEY, null);
+      homeAssistantServerUrl = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_SERVER_URL, null);
+      homeAssistantLongLivedToken = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_LONG_LIVED_TOKEN, null);
+      homeAssistantIngressSessionKey = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_INGRESS_SESSION_KEY, null);
+    } else {
+      String demoDomain = LocaleUtil.getLocalizedGrocyDemoDomain(application);
+      baseUrl = sharedPrefs.getString(
+          Constants.PREF.SERVER_URL,
+          demoDomain != null && !demoDomain.isBlank()
+              ? "https://" + demoDomain
+              : application.getString(R.string.url_grocy_demo_default)
+      );
+      apiKey = sharedPrefs.getString(Constants.PREF.API_KEY, null);
+      homeAssistantServerUrl = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_SERVER_URL, null);
+      homeAssistantLongLivedToken = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_LONG_LIVED_TOKEN, null);
+      homeAssistantIngressSessionKey = sharedPrefs.getString(Constants.PREF.HOME_ASSISTANT_INGRESS_SESSION_KEY, null);
+    }
   }
 
   public GrocyApi(Application application, String serverUrl) {
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(application);
     baseUrl = serverUrl;
+    apiKey = null;
+    homeAssistantServerUrl = null;
+    homeAssistantLongLivedToken = null;
+    homeAssistantIngressSessionKey = null;
+  }
+
+  public GrocyApi(Application application, Server server) {
+    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(application);
+    baseUrl = server.getGrocyServerUrl();
+    apiKey = server.getGrocyApiKey();
+    homeAssistantServerUrl = server.getHomeAssistantServerUrl();
+    homeAssistantLongLivedToken = server.getHomeAssistantLongLivedToken();
+    homeAssistantIngressSessionKey = server.getHomeAssistantIngressSessionKey();
   }
 
   public String getBaseUrl() {
     return baseUrl;
+  }
+
+  public String getApiKey() {
+    return apiKey;
+  }
+
+  public String getHomeAssistantServerUrl() {
+    return homeAssistantServerUrl;
+  }
+
+  public String getHomeAssistantLongLivedToken() {
+    return homeAssistantLongLivedToken;
+  }
+
+  public String getHomeAssistantIngressSessionKey() {
+    return homeAssistantIngressSessionKey;
   }
 
   private String getUrl(String command) {

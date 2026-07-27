@@ -36,11 +36,12 @@ public class Server implements Parcelable {
   @PrimaryKey
   @ColumnInfo(name = "id")
   @SerializedName("id")
-  private int id;
+  @NonNull
+  private String id;
 
   @ColumnInfo(name = "alias")
   @SerializedName("alias")
-  private String alias;
+  private String displayName;
 
   @ColumnInfo(name = "grocy_server_url")
   @SerializedName("grocy_server_url")
@@ -56,29 +57,53 @@ public class Server implements Parcelable {
 
   @ColumnInfo(name = "home_assistant_token")
   @SerializedName("home_assistant_token")
-  private String homeAssistantToken;
+  private String homeAssistantLongLivedToken;
+
+  @ColumnInfo(name = "home_assistant_ingress_session_key")
+  @SerializedName("home_assistant_ingress_session_key")
+  private String homeAssistantIngressSessionKey;
+
+  @ColumnInfo(name = "status")
+  @SerializedName("status")
+  private int status;
+
+  @ColumnInfo(name = "last_used_timestamp")
+  @SerializedName("last_used_timestamp")
+  private long lastUsedTimestamp;
+
+  @ColumnInfo(name = "is_default")
+  @SerializedName("is_default")
+  private boolean isDefault;
 
   public Server() {
   }  // for Room
 
   @Ignore
   public Server(Parcel parcel) {
-    id = parcel.readInt();
-    alias = parcel.readString();
+    id = parcel.readString();
+    displayName = parcel.readString();
     grocyServerUrl = parcel.readString();
     grocyApiKey = parcel.readString();
     homeAssistantServerUrl = parcel.readString();
-    homeAssistantToken = parcel.readString();
+    homeAssistantLongLivedToken = parcel.readString();
+    homeAssistantIngressSessionKey = parcel.readString();
+    status = parcel.readInt();
+    lastUsedTimestamp = parcel.readLong();
+    isDefault = parcel.readByte() != 0;
   }
 
   @Override
   public void writeToParcel(Parcel dest, int flags) {
-    dest.writeInt(id);
-    dest.writeString(alias);
+    dest.writeString(id);
+    dest.writeString(displayName);
     dest.writeString(grocyServerUrl);
     dest.writeString(grocyApiKey);
     dest.writeString(homeAssistantServerUrl);
-    dest.writeString(homeAssistantToken);
+    dest.writeString(homeAssistantLongLivedToken);
+    dest.writeString(homeAssistantIngressSessionKey);
+    dest.writeInt(status);
+    dest.writeLong(lastUsedTimestamp);
+    dest.writeByte((byte) (isDefault ? 1 : 0));
   }
 
   public static final Creator<Server> CREATOR = new Creator<>() {
@@ -94,20 +119,20 @@ public class Server implements Parcelable {
     }
   };
 
-  public int getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public String getAlias() {
-    return alias;
+  public String getDisplayName() {
+    return displayName;
   }
 
-  public void setAlias(String alias) {
-    this.alias = alias;
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
   }
 
   public String getGrocyServerUrl() {
@@ -134,12 +159,44 @@ public class Server implements Parcelable {
     this.homeAssistantServerUrl = homeAssistantServerUrl;
   }
 
-  public String getHomeAssistantToken() {
-    return homeAssistantToken;
+  public String getHomeAssistantLongLivedToken() {
+    return homeAssistantLongLivedToken;
   }
 
-  public void setHomeAssistantToken(String homeAssistantToken) {
-    this.homeAssistantToken = homeAssistantToken;
+  public void setHomeAssistantLongLivedToken(String homeAssistantLongLivedToken) {
+    this.homeAssistantLongLivedToken = homeAssistantLongLivedToken;
+  }
+
+  public String getHomeAssistantIngressSessionKey() {
+    return homeAssistantIngressSessionKey;
+  }
+
+  public void setHomeAssistantIngressSessionKey(String homeAssistantIngressSessionKey) {
+    this.homeAssistantIngressSessionKey = homeAssistantIngressSessionKey;
+  }
+
+  public int getStatus() {
+    return status;
+  }
+
+  public void setStatus(int status) {
+    this.status = status;
+  }
+
+  public long getLastUsedTimestamp() {
+    return lastUsedTimestamp;
+  }
+
+  public void setLastUsedTimestamp(long lastUsedTimestamp) {
+    this.lastUsedTimestamp = lastUsedTimestamp;
+  }
+
+  public boolean isDefault() {
+    return isDefault;
+  }
+
+  public void setDefault(boolean isDefault) {
+    this.isDefault = isDefault;
   }
 
   @Override
@@ -156,17 +213,18 @@ public class Server implements Parcelable {
       return false;
     }
     Server server = (Server) o;
-    return id == server.id && Objects.equals(alias, server.alias) && Objects
+    return status == server.status && lastUsedTimestamp == server.lastUsedTimestamp && isDefault == server.isDefault && Objects.equals(id, server.id) && Objects.equals(displayName, server.displayName) && Objects
         .equals(grocyServerUrl, server.grocyServerUrl) && Objects
         .equals(grocyApiKey, server.grocyApiKey) && Objects
         .equals(homeAssistantServerUrl, server.homeAssistantServerUrl) && Objects
-        .equals(homeAssistantToken, server.homeAssistantToken);
+        .equals(homeAssistantLongLivedToken, server.homeAssistantLongLivedToken) && Objects
+        .equals(homeAssistantIngressSessionKey, server.homeAssistantIngressSessionKey);
   }
 
   @Override
   public int hashCode() {
     return Objects
-        .hash(id, alias, grocyServerUrl, grocyApiKey, homeAssistantServerUrl, homeAssistantToken);
+        .hash(id, displayName, grocyServerUrl, grocyApiKey, homeAssistantServerUrl, homeAssistantLongLivedToken, homeAssistantIngressSessionKey, status, lastUsedTimestamp, isDefault);
   }
 
   @NonNull

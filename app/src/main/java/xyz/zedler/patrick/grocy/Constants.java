@@ -31,6 +31,7 @@ public final class Constants {
 
     public final static String SERVER_URL = "server_url";
     public final static String API_KEY = "api_key";
+    public final static String ACTIVE_SERVER_INSTANCE_ID = "active_server_instance_id";
     public final static String HOME_ASSISTANT_SERVER_URL = "home_assistant_server_url";
     public final static String HOME_ASSISTANT_LONG_LIVED_TOKEN = "home_assistant_long_lived_token";
     public final static String HOME_ASSISTANT_INGRESS_SESSION_KEY = "home_assistant_ingress_session_key";

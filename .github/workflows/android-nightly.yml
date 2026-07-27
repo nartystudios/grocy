@@ -19,8 +19,8 @@ jobs:
 
       - name: Replace applicationId and name (Master)
         run: |
-          sed -i 's/applicationId = "xyz.zedler.patrick.grocy"/applicationId = "xyz.zedler.patrick.grocy.nightly"/' app/build.gradle
-          sed -i 's|<string name="app_name" translatable="false">Grocy</string>|<string name="app_name" translatable="false">Grocy Nightly</string>|g' app/src/main/res/values/strings.xml
+          sed -i 's/applicationId = "xyz.zedler.patrick.grocy"/applicationId = "xyz.zedler.patrick.grocy.multi.nightly"/' app/build.gradle
+          sed -i 's|<string name="app_name" translatable="false">Grocy Multi</string>|<string name="app_name" translatable="false">Grocy Multi Nightly</string>|g' app/src/main/res/values/strings.xml
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
@@ -51,8 +51,8 @@ jobs:
 
       - name: Replace applicationId and name (MLKit)
         run: |
-          sed -i 's/applicationId = "xyz.zedler.patrick.grocy"/applicationId = "xyz.zedler.patrick.grocy.nightly"/' app/build.gradle
-          sed -i 's/android:label="@string\/app_name"/android:label="Grocy Nightly"/' app/src/main/AndroidManifest.xml
+          sed -i 's/applicationId = "xyz.zedler.patrick.grocy"/applicationId = "xyz.zedler.patrick.grocy.multi.nightly"/' app/build.gradle
+          sed -i 's/android:label="@string\/app_name"/android:label="Grocy Multi Nightly"/' app/src/main/AndroidManifest.xml
 
       - name: Build MLKit Debug APK
         run: ./gradlew assembleDebug

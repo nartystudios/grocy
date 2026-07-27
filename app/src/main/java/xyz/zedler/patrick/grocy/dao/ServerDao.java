@@ -24,6 +24,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 import io.reactivex.rxjava3.core.Single;
 import java.util.List;
 import xyz.zedler.patrick.grocy.model.Server;
@@ -31,13 +32,28 @@ import xyz.zedler.patrick.grocy.model.Server;
 @Dao
 public interface ServerDao {
 
-  @Query("SELECT * FROM server_table")
+  @Query("SELECT * FROM server_table ORDER BY is_default DESC, last_used_timestamp DESC")
   Single<List<Server>> getServers();
+
+  @Query("SELECT * FROM server_table WHERE id = :id")
+  Single<Server> getServerById(String id);
 
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   Single<Long> insertServer(Server server);
 
-  @Query("DELETE FROM server_table")
-  Single<Integer> deleteServers();
+  @Update
+  Single<Integer> updateServer(Server server);
+
+  @Query("DELETE FROM server_table WHERE id = :id")
+  Single<Integer> deleteServerById(String id);
+
+  @Query("UPDATE server_table SET is_default = 0 WHERE is_default = 1")
+  Single<Integer> clearDefaults();
+
+  @Query("UPDATE server_table SET is_default = 1 WHERE id = :id")
+  Single<Integer> setDefaultServer(String id);
+
+  @Query("UPDATE server_table SET last_used_timestamp = :timestamp WHERE id = :id")
+  Single<Integer> updateLastUsedTimestamp(String id, long timestamp);
 
 }
