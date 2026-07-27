@@ -54,7 +54,10 @@ import xyz.zedler.patrick.grocy.helper.DownloadHelper.OnMultiTypeErrorListener;
 import xyz.zedler.patrick.grocy.helper.DownloadHelper.OnStringResponseListener;
 import xyz.zedler.patrick.grocy.model.Event;
 import xyz.zedler.patrick.grocy.model.InfoFullscreen;
+import xyz.zedler.patrick.grocy.model.Server;
 import xyz.zedler.patrick.grocy.repository.MainRepository;
+import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.core.Flowable;
 import xyz.zedler.patrick.grocy.util.ConfigUtil;
 import xyz.zedler.patrick.grocy.util.PrefsUtil;
 import xyz.zedler.patrick.grocy.web.NetworkQueue.QueueItem;
@@ -433,7 +436,77 @@ public class LoginRequestViewModel extends BaseViewModel {
     super.onCleared();
   }
 
-  public static QueueItem getSystemInfo(
+  // Server instance management methods
+
+  private MutableLiveData<java.util.List<Server>> serversLiveData = new MutableLiveData<>();
+
+  public MutableLiveData<java.util.List<Server>> getServersLiveData() {
+    MainRepository repository = new MainRepository(getApplication());
+    repository.getServers()
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(servers -> {
+          serversLiveData.setValue(servers);
+        }, error -> {
+          Log.e(TAG, "getServers error: " + error);
+        });
+    return serversLiveData;
+  }
+
+  public void selectServerInstance(Server server) {
+    if (server == null) {
+      return;
+    }
+    MainRepository repository = new MainRepository(getApplication());
+    repository.updateLastUsedTimestamp(server.getId(), System.currentTimeMillis())
+        .subscribeOn(Schedulers.io())
+        .subscribe();
+    PrefsUtil.setActiveServerInstanceId(sharedPrefs, server.getId());
+    
+    // Set as active server API
+    GrocyApi grocyApi = new GrocyApi(getApplication(), server);
+    sharedPrefsPrivate.edit()
+        .putString(Constants.PREF.SERVER_URL, server.getGrocyServerUrl())
+        .putString(Constants.PREF.API_KEY, server.getGrocyApiKey())
+        .putString(Constants.PREF.HOME_ASSISTANT_SERVER_URL, server.getHomeAssistantServerUrl())
+        .putString(Constants.PREF.HOME_ASSISTANT_LONG_LIVED_TOKEN, server.getHomeAssistantLongLivedToken())
+        .apply();
+  }
+
+  public void insertServer(Server server) {
+    MainRepository repository = new MainRepository(getApplication());
+    repository.insertServer(server)
+        .subscribeOn(Schedulers.io())
+        .subscribe();
+  }
+
+  public void updateServer(Server server) {
+    MainRepository repository = new MainRepository(getApplication());
+    repository.updateServer(server)
+        .subscribeOn(Schedulers.io())
+        .subscribe();
+  }
+
+  public void deleteServerById(String serverId) {
+    MainRepository repository = new MainRepository(getApplication());
+    repository.deleteServerById(serverId)
+        .subscribeOn(Schedulers.io())
+        .subscribe();
+  }
+
+  public void getServerByIdAsync(String serverId, java.util.function.Consumer<Server> callback) {
+    MainRepository repository = new MainRepository(getApplication());
+    repository.getServerById(serverId)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(server -> {
+          callback.accept(server);
+        }, error -> {
+          Log.e(TAG, "getServerById error: " + error);
+        });
+  }
+
+  public QueueItem getSystemInfo(
       DownloadHelper dlHelper,
       OnStringResponseListener onResponseListener,
       OnErrorListener onErrorListener

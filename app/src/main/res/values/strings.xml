@@ -1396,4 +1396,23 @@
   <string name="mtm_notification">Certificate Verification</string>
   <string name="mtm_error_keystore">Exception on loading key store from file</string>
 
+  <!-- Multi-Instance Server Strings -->
+  <string name="title_select_server_instance">Select Server Instance</string>
+  <string name="title_add_edit_server_instance">Add / Edit Server Instance</string>
+  <string name="title_home_assistant_settings">Home Assistant Settings (Optional)</string>
+  <string name="hint_server_display_name">Display Name</string>
+  <string name="hint_server_url">Server URL</string>
+  <string name="hint_api_key">API Key</string>
+  <string name="hint_ha_server_url">Home Assistant Server URL</string>
+  <string name="hint_ha_long_lived_token">Long Lived Token</string>
+  <string name="msg_no_server_instances">No server instances configured yet.\nAdd your first Grocy server instance to get started.</string>
+  <string name="action_add_server_instance">Add Server</string>
+  <string name="action_select_and_continue">Select and Continue</string>
+  <string name="error_server_url_required">Server URL is required</string>
+  <string name="msg_server_added">Server instance added successfully</string>
+  <string name="msg_server_updated">Server instance updated successfully</string>
+  <string name="msg_server_deleted">Server instance deleted</string>
+  <string name="title_delete_server">Delete Server Instance</string>
+  <string name="msg_delete_server_confirm">Are you sure you want to delete this server instance? This action cannot be undone.</string>
+
 </resources>

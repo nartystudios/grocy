@@ -305,6 +305,26 @@
     android:id="@+id/action_global_onboardingFragment"
     app:destination="@id/onboardingFragment" />
   <fragment
+    android:id="@+id/serverSelectionFragment"
+    android:name="xyz.zedler.patrick.grocy.fragment.ServerSelectionFragment"
+    android:label="ServerSelectionFragment"
+    tools:layout="@layout/fragment_server_selection">
+    <action
+      android:id="@+id/action_serverSelectionFragment_to_addEditServerInstanceFragment"
+      app:destination="@id/addEditServerInstanceFragment" />
+  </fragment>
+  <dialog
+    android:id="@+id/addEditServerInstanceFragment"
+    android:name="xyz.zedler.patrick.grocy.fragment.AddEditServerInstanceFragment"
+    android:label="AddEditServerInstanceFragment"
+    tools:layout="@layout/fragment_add_edit_server_instance">
+    <argument
+      android:name="serverId"
+      app:argType="string"
+      app:nullable="true"
+      android:defaultValue="@null" />
+  </dialog>
+  <fragment
     android:id="@+id/overviewStartFragment"
     android:name="xyz.zedler.patrick.grocy.fragment.OverviewStartFragment"
     android:label="OverviewStartFragment"

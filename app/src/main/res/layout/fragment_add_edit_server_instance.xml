@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Grocy Android.
+  ~
+  ~ Grocy Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Grocy Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Grocy Android. If not, see http://www.gnu.org/licenses/.
+  ~
+  ~ Copyright (c) 2020-2024 by Patrick Zedler and Dominic Zedler
+  ~ Copyright (c) 2024-2026 by Patrick Zedler
+  -->
+
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <import type="android.view.View" />
+    <variable
+      name="activity"
+      type="xyz.zedler.patrick.grocy.activity.MainActivity" />
+    <variable
+      name="fragment"
+      type="xyz.zedler.patrick.grocy.fragment.AddEditServerInstanceFragment" />
+    <variable
+      name="clickUtil"
+      type="xyz.zedler.patrick.grocy.util.ClickUtil" />
+  </data>
+
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.Grocy.Toolbar.Back"
+        app:title="@string/title_add_edit_server_instance" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="?attr/actionBarSize"
+      android:padding="16dp">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/hint_server_display_name"
+          style="@style/Widget.Grocy.TextInputLayout.FilledBox">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDisplayName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:hint="@string/hint_server_url"
+          style="@style/Widget.Grocy.TextInputLayout.FilledBox">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextServerUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:hint="@string/hint_api_key"
+          style="@style/Widget.Grocy.TextInputLayout.FilledBox">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="16dp" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/title_home_assistant_settings"
+          android:textStyle="bold"
+          android:paddingBottom="8dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/hint_ha_server_url"
+          style="@style/Widget.Grocy.TextInputLayout.FilledBox">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextHaServerUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:hint="@string/hint_ha_long_lived_token"
+          style="@style/Widget.Grocy.TextInputLayout.FilledBox">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextHaToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="32dp" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:gravity="end">
+
+          <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeleteServer"
+            style="@style/Widget.Grocy.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_delete"
+            android:visibility="gone"
+            app:clickUtil="@{clickUtil}" />
+
+          <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveServer"
+            style="@style/Widget.Grocy.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/action_save"
+            app:clickUtil="@{clickUtil}" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
