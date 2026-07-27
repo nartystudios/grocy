@@ -2,11 +2,6 @@ name: Firebase App Distribution
 
 on:
   workflow_dispatch:
-    inputs:
-      release_notes:
-        description: 'Release notes for the build'
-        required: false
-        default: 'Nova build disponível no App Distribution'
 
 jobs:
   build-and-distribute:
@@ -34,16 +29,18 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      - name: Authenticate with Firebase
+      - name: Save Firebase Service Account
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: firebase login:ci --token=$FIREBASE_TOKEN
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT" > /tmp/sa.json
 
-      - name: Upload to Firebase App Distribution
+      - name: Distribute to Firebase App Distribution
         env:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/sa.json
         run: |
           firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk \
-            --app $FIREBASE_APP_ID \
+            --app "$FIREBASE_APP_ID" \
             --groups "testers" \
-            --release-notes "${{ github.event.inputs.release_notes || 'Nova build disponível no App Distribution' }}"
+            --release-notes "Build ${{ github.run_number }} - $(git rev-parse --short HEAD)"
