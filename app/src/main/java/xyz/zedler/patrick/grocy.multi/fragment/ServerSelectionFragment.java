@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavHostFragment;
 import xyz.zedler.patrick.grocy.multi.R;
 import xyz.zedler.patrick.grocy.multi.activity.MainActivity;
 import xyz.zedler.patrick.grocy.multi.databinding.FragmentServerSelectionBinding;
@@ -106,7 +107,7 @@ public class ServerSelectionFragment extends BaseFragment {
           binding.btnSelectServer.setOnClickListener(v -> {
             performHapticHeavyClick();
             viewModel.selectServerInstance(finalActiveServer);
-            requireActivity().onBackPressed();
+            NavHostFragment.findNavController(this).popBackStack();
           });
         }
       } else {
@@ -119,6 +120,6 @@ public class ServerSelectionFragment extends BaseFragment {
 
   public void selectServerInstance(Server server) {
     viewModel.selectServerInstance(server);
-    requireActivity().onBackPressed();
+    NavHostFragment.findNavController(this).popBackStack();
   }
 }
