@@ -27,7 +27,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavHostFragment;
+import androidx.navigation.fragment.NavHostFragment;
 import xyz.zedler.patrick.grocy.multi.R;
 import xyz.zedler.patrick.grocy.multi.activity.MainActivity;
 import xyz.zedler.patrick.grocy.multi.databinding.FragmentServerSelectionBinding;
