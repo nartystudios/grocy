@@ -28,6 +28,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import xyz.zedler.patrick.grocy.multi.Constants;
 import xyz.zedler.patrick.grocy.multi.R;
@@ -95,7 +96,7 @@ public class AddEditServerInstanceFragment extends BaseFragment {
       currentNewServerId = java.util.UUID.randomUUID().toString();
     }
 
-    binding.toolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
+    binding.toolbar.setNavigationOnClickListener(v -> NavHostFragment.findNavController(this).popBackStack());
 
     binding.btnSaveServer.setOnClickListener(v -> {
       String displayName = binding.editTextDisplayName.getText() != null 
@@ -151,13 +152,14 @@ public class AddEditServerInstanceFragment extends BaseFragment {
         server.setHomeAssistantLongLivedToken(haToken);
         server.setStatus(0); // Status: UNKNOWN
         server.setLastUsedTimestamp(0);
-        server.setDefault(false);
+        server.setDefault(true); // Set as default for new server
 
         viewModel.insertServer(server);
+        viewModel.selectServerInstance(server); // Set as active server instance
         Toast.makeText(activity, R.string.msg_server_added, Toast.LENGTH_SHORT).show();
       }
 
-      requireActivity().onBackPressed();
+      NavHostFragment.findNavController(this).popBackStack();
     });
 
     binding.btnDeleteServer.setOnClickListener(v -> {
@@ -169,7 +171,7 @@ public class AddEditServerInstanceFragment extends BaseFragment {
               performHapticHeavyClick();
               viewModel.deleteServerById(editingServer.getId());
               Toast.makeText(activity, R.string.msg_server_deleted, Toast.LENGTH_SHORT).show();
-              requireActivity().onBackPressed();
+              NavHostFragment.findNavController(this).popBackStack();
             })
             .setNegativeButton(R.string.action_cancel, (dialog, which) -> performHapticClick())
             .setOnCancelListener(dialog -> performHapticClick())
