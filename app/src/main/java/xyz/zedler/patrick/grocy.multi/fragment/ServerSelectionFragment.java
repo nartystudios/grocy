@@ -107,7 +107,10 @@ public class ServerSelectionFragment extends BaseFragment {
           binding.btnSelectServer.setOnClickListener(v -> {
             performHapticHeavyClick();
             viewModel.selectServerInstance(finalActiveServer);
-            NavHostFragment.findNavController(this).popBackStack();
+            // Navigate to login flow after selecting server
+            NavHostFragment.findNavController(this).navigate(
+                ServerSelectionFragmentDirections.actionServerSelectionFragmentToNavigationLogin()
+            );
           });
         }
       } else {

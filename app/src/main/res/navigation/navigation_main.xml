@@ -312,6 +312,11 @@
     <action
       android:id="@+id/action_serverSelectionFragment_to_addEditServerInstanceFragment"
       app:destination="@id/addEditServerInstanceFragment" />
+    <action
+      android:id="@+id/action_serverSelectionFragment_to_navigation_login"
+      app:destination="@id/navigation_login"
+      app:popUpTo="@id/serverSelectionFragment"
+      app:popUpToInclusive="true" />
   </fragment>
   <dialog
     android:id="@+id/addEditServerInstanceFragment"

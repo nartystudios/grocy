@@ -155,10 +155,10 @@ public class AddEditServerInstanceFragment extends BaseFragment {
         server.setDefault(true); // Set as default for new server
 
         viewModel.insertServer(server);
-        viewModel.selectServerInstance(server); // Set as active server instance
         Toast.makeText(activity, R.string.msg_server_added, Toast.LENGTH_SHORT).show();
       }
 
+      // Dismiss the dialog and let ServerSelectionFragment handle the server list update
       NavHostFragment.findNavController(this).popBackStack();
     });
 
