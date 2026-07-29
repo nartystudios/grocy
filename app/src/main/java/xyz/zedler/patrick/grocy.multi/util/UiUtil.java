@@ -141,14 +141,14 @@ public class UiUtil {
   }
 
   public void updateBottomAppBar(
-      SharedPreferences sharedPrefs,
+      Context context,
       boolean showFab,
       @MenuRes int newMenuId,
       @Nullable OnMenuItemClickListener onMenuItemClickListener
   ) {
     // Handler with postDelayed is necessary for workaround of issue #552
     new Handler().postDelayed(() -> {
-      if (showFab && !binding.fabMain.isShown() && !PrefsUtil.isServerUrlEmpty(sharedPrefs)) {
+      if (showFab && !binding.fabMain.isShown() && !PrefsUtil.isServerUrlEmpty(context)) {
         binding.fabMain.show();
       } else if (!showFab && binding.fabMain.isShown()) {
         binding.fabMain.hide();

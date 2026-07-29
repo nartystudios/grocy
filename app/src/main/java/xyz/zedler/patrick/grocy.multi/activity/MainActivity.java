@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
     );
 
     // UPDATE CONFIG | CHECK GROCY COMPATIBILITY
-    if (!PrefsUtil.isServerUrlEmpty(sharedPrefs)) {
+    if (!PrefsUtil.isServerUrlEmpty(this)) {
       ConfigUtil.loadInfo(
           new DownloadHelper(this, TAG),
           grocyApi,
@@ -346,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
       @MenuRes int newMenuId,
       @Nullable OnMenuItemClickListener onMenuItemClickListener
   ) {
-    uiUtil.updateBottomAppBar(sharedPrefs, showFab, newMenuId, onMenuItemClickListener);
+    uiUtil.updateBottomAppBar(this, showFab, newMenuId, onMenuItemClickListener);
   }
 
   public void updateBottomAppBar(boolean showFab, @MenuRes int newMenuId) {
