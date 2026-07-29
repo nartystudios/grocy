@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
     // NAVIGATION
     fragmentManager = getSupportFragmentManager();
     navUtil = new NavUtil(this, (controller, dest, args) -> {
-      if (PrefsUtil.isServerUrlEmpty(this)) {
+      if (PrefsUtil.isServerUrlEmpty(MainActivity.this)) {
         binding.fabMain.hide();
       }
     }, sharedPrefs, TAG);
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
             getOnBackPressedDispatcher().onBackPressed();
             setEnabled(true);
           }
-          if (!PrefsUtil.isServerUrlEmpty(this)) {
+          if (!PrefsUtil.isServerUrlEmpty(MainActivity.this)) {
             binding.bottomAppBar.performShow();
           }
         }
