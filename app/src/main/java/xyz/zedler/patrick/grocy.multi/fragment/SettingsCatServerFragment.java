@@ -194,4 +194,10 @@ public class SettingsCatServerFragment extends BaseFragment {
         .create();
     dialogLogout.show();
   }
+
+  public void openServerSelection() {
+    activity.navUtil.navigate(
+        SettingsCatServerFragmentDirections.actionSettingsCatServerFragmentToServerSelectionFragment()
+    );
+  }
 }

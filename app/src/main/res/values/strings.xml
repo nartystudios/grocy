@@ -1414,5 +1414,9 @@
   <string name="msg_server_deleted">Server instance deleted</string>
   <string name="title_delete_server">Delete Server Instance</string>
   <string name="msg_delete_server_confirm">Are you sure you want to delete this server instance? This action cannot be undone.</string>
+  
+  <!-- Server Management in Settings -->
+  <string name="title_server_selection">Manage Server Instances</string>
+  <string name="msg_manage_multiple_servers">Add, edit or switch between multiple Grocy servers</string>
 
 </resources>

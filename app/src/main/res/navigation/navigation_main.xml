@@ -592,6 +592,9 @@
       <deepLink
         android:id="@+id/deepLink6"
         app:uri="@string/deep_link_settingsCatServerFragment" />
+      <action
+        android:id="@+id/action_settingsCatServerFragment_to_serverSelectionFragment"
+        app:destination="@id/serverSelectionFragment" />
     </fragment>
     <fragment
       android:id="@+id/settingsCatAppearanceFragment"
