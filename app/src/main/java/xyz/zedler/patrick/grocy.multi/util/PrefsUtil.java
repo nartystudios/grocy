@@ -291,8 +291,11 @@ public class PrefsUtil {
     return isDebuggingEnabled(PreferenceManager.getDefaultSharedPreferences(context));
   }
 
-  public static boolean isServerUrlEmpty(SharedPreferences sharedPrefs) {
-    String server = sharedPrefs.getString(Constants.PREF.SERVER_URL, null);
+  public static boolean isServerUrlEmpty(Context context) {
+    SharedPreferences credentialsPrefs = context.getSharedPreferences(
+        Constants.PREF.CREDENTIALS, Context.MODE_PRIVATE
+    );
+    String server = credentialsPrefs.getString(Constants.PREF.SERVER_URL, null);
     return server == null || server.isEmpty();
   }
 

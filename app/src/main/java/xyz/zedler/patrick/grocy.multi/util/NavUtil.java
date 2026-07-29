@@ -83,7 +83,7 @@ public class NavUtil {
     boolean introShown = sharedPrefs.getBoolean(Constants.PREF.INTRO_SHOWN, false);
     if (!introShown) {
       graph.setStartDestination(R.id.onboardingFragment);
-    } else if (PrefsUtil.isServerUrlEmpty(sharedPrefs)) {
+    } else if (PrefsUtil.isServerUrlEmpty(activity)) {
       graph.setStartDestination(R.id.navigation_login);
     } else {
       graph.setStartDestination(R.id.overviewStartFragment);
