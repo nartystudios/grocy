@@ -215,19 +215,28 @@ public class MainActivity extends AppCompatActivity {
     OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
       @Override
       public void handleOnBackPressed() {
-        BaseFragment currentFragment = getCurrentFragment();
-        if (currentFragment.isSearchVisible()) {
-          currentFragment.dismissSearch();
-        } else {
-          boolean handled = currentFragment.onBackPressed();
-          if (!handled) {
-            setEnabled(false);
-            getOnBackPressedDispatcher().onBackPressed();
-            setEnabled(true);
+        try {
+          BaseFragment currentFragment = getCurrentFragment();
+          if (currentFragment != null) {
+            if (currentFragment.isSearchVisible()) {
+              currentFragment.dismissSearch();
+            } else {
+              boolean handled = currentFragment.onBackPressed();
+              if (!handled) {
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                setEnabled(true);
+              }
+            }
           }
           if (!PrefsUtil.isServerUrlEmpty(MainActivity.this)) {
             binding.bottomAppBar.performShow();
           }
+        } catch (Exception e) {
+          Log.e(TAG, "handleOnBackPressed: error getting current fragment", e);
+          setEnabled(false);
+          getOnBackPressedDispatcher().onBackPressed();
+          setEnabled(true);
         }
         hideKeyboard();
       }

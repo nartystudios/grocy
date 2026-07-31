@@ -1056,8 +1056,8 @@ public class SettingsViewModel extends BaseViewModel {
     repository.clearAllTables();
   }
 
-  public void clearServerRelatedSharedPreferences() {
-    PrefsUtil.clearServerRelatedSharedPreferences(sharedPrefs);
+  public void clearServerRelatedSharedPreferences(Context context) {
+    PrefsUtil.clearServerRelatedSharedPreferences(context, sharedPrefs);
   }
 
   @Override

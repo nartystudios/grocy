@@ -1408,8 +1408,9 @@
   <string name="msg_no_server_instances">No server instances configured yet.\nAdd your first Grocy server instance to get started.</string>
   <string name="action_add_server_instance">Add Server</string>
   <string name="action_select_and_continue">Select and Continue</string>
-  <string name="error_server_url_required">Server URL is required</string>
-  <string name="msg_server_added">Server instance added successfully</string>
+   <string name="error_server_url_required">Server URL is required</string>
+   <string name="error_invalid_server_url">Invalid server URL format</string>
+   <string name="msg_server_added">Server instance added successfully</string>
   <string name="msg_server_updated">Server instance updated successfully</string>
   <string name="msg_server_deleted">Server instance deleted</string>
   <string name="title_delete_server">Delete Server Instance</string>

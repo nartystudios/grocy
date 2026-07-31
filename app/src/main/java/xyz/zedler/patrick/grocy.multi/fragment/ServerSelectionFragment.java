@@ -97,26 +97,35 @@ public class ServerSelectionFragment extends BaseFragment {
           activeServer = servers.get(0);
         }
 
-        final Server finalActiveServer = activeServer;
-
-        if (finalActiveServer != null) {
-          binding.btnSelectServer.setText(finalActiveServer.getDisplayName() != null 
-              ? finalActiveServer.getDisplayName() 
-              : finalActiveServer.getGrocyServerUrl());
+        if (activeServer != null) {
+          String buttonText = activeServer.getDisplayName() != null 
+              ? activeServer.getDisplayName() 
+              : activeServer.getGrocyServerUrl();
+          
+          // Only update text if changed to avoid unnecessary UI updates
+          if (!buttonText.equals(binding.btnSelectServer.getText().toString())) {
+            binding.btnSelectServer.setText(buttonText);
+          }
           binding.btnSelectServer.setVisibility(View.VISIBLE);
-          binding.btnSelectServer.setOnClickListener(v -> {
-            performHapticHeavyClick();
-            viewModel.selectServerInstance(finalActiveServer);
-            // Navigate to login flow after selecting server
-            NavHostFragment.findNavController(this).navigate(
-                ServerSelectionFragmentDirections.actionServerSelectionFragmentToNavigationLogin()
-            );
-          });
+          
+          // Set listener only if not already set (using a tag to track)
+          if (binding.btnSelectServer.getTag() == null || !(Boolean) binding.btnSelectServer.getTag()) {
+            binding.btnSelectServer.setTag(true);
+            binding.btnSelectServer.setOnClickListener(v -> {
+              performHapticHeavyClick();
+              viewModel.selectServerInstance(activeServer);
+              // Navigate to login flow after selecting server
+              NavHostFragment.findNavController(ServerSelectionFragment.this).navigate(
+                  ServerSelectionFragmentDirections.actionServerSelectionFragmentToNavigationLogin()
+              );
+            });
+          }
         }
       } else {
         binding.recyclerViewServers.setVisibility(View.GONE);
         binding.textViewNoServers.setVisibility(View.VISIBLE);
         binding.btnSelectServer.setVisibility(View.GONE);
+        binding.btnSelectServer.setTag(null);
       }
     });
   }

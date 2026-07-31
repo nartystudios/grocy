@@ -187,7 +187,7 @@ public class SettingsCatServerFragment extends BaseFragment {
         .setPositiveButton(R.string.action_logout, (dialog, which) -> {
           performHapticHeavyClick();
           viewModel.clearAllTables();
-          viewModel.clearServerRelatedSharedPreferences();
+          viewModel.clearServerRelatedSharedPreferences(requireContext());
           new Handler().postDelayed(() -> RestartUtil.restartApp(requireContext()), 500);
         }).setNegativeButton(R.string.action_cancel, (dialog, which) -> performHapticClick())
         .setOnCancelListener(dialog -> performHapticClick())

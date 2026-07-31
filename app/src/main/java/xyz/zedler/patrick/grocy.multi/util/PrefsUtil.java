@@ -249,7 +249,7 @@ public class PrefsUtil {
     editPrefs.apply();
   }
 
-  public static void clearServerRelatedSharedPreferences(SharedPreferences sharedPrefs) {
+  public static void clearServerRelatedSharedPreferences(Context context, SharedPreferences sharedPrefs) {
     clearCachingRelatedSharedPreferences(sharedPrefs);
 
     SharedPreferences.Editor editPrefs = sharedPrefs.edit();
@@ -264,6 +264,17 @@ public class PrefsUtil {
     editPrefs.remove(PREF.CURRENT_USER_ID);
     editPrefs.remove(PREF.ACTIVE_SERVER_INSTANCE_ID);
     editPrefs.apply();
+
+    // Clear credentials file to ensure consistency with isServerUrlEmpty()
+    SharedPreferences credentialsPrefs = context.getSharedPreferences(
+        Constants.PREF.CREDENTIALS, Context.MODE_PRIVATE
+    );
+    SharedPreferences.Editor credentialsEditor = credentialsPrefs.edit();
+    credentialsEditor.remove(PREF.SERVER_URL);
+    credentialsEditor.remove(PREF.API_KEY);
+    credentialsEditor.remove(PREF.HOME_ASSISTANT_SERVER_URL);
+    credentialsEditor.remove(PREF.HOME_ASSISTANT_LONG_LIVED_TOKEN);
+    credentialsEditor.apply();
   }
 
   public static String getActiveServerInstanceId(SharedPreferences sharedPrefs) {

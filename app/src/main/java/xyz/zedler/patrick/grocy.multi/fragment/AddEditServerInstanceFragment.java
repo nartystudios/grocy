@@ -20,6 +20,7 @@
 
 package xyz.zedler.patrick.grocy.multi.fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,6 +124,13 @@ public class AddEditServerInstanceFragment extends BaseFragment {
       // Ensure URL has protocol
       if (!serverUrl.startsWith("http://") && !serverUrl.startsWith("https://")) {
         serverUrl = "https://" + serverUrl;
+      }
+
+      // Validate URL format
+      Uri uri = Uri.parse(serverUrl);
+      if (uri == null || uri.getHost() == null || uri.getHost().isEmpty()) {
+        Toast.makeText(activity, R.string.error_invalid_server_url, Toast.LENGTH_SHORT).show();
+        return;
       }
 
       Server server;
